@@ -1,0 +1,57 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Lua",
+  "patterns": [
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#strings"
+    }
+  ],
+  "repository": {
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.lua",
+          "match": "\\b(if|while|for|return)\\b"
+        },
+        {
+          "name": "entity.name.function.custom",
+          "match": "\\b(output|output_array|output_image|trigger|read_var|write_var|write_var_array|color)\\b"
+        },
+        {
+          "name": "variable.other.custom",
+          "match": "\\bV[1-8]\\b"
+        },
+        {
+          "name": "support.class.custom",
+          "begin": "\\bPixelData\\b",
+          "patterns": [
+            {
+              "name": "support.function.custom",
+              "match": "\\bSetPixel\\b"
+            },
+            {
+              "name": "support.function.custom",
+              "match": "\\bGetPixel\\b"
+            }
+          ],
+          "end": ""
+        }
+      ]
+    },
+    "strings": {
+      "name": "string.quoted.double.lua",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "name": "constant.character.escape.lua",
+          "match": "\\\\."
+        }
+      ]
+    }
+  },
+  "scopeName": "source.lua"
+}

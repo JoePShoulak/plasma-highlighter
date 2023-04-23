@@ -1,0 +1,25 @@
+{
+  "name": "plasmahighlighter",
+  "displayName": "plasma-highlighter",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.77.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "lua",
+      "aliases": ["Lua", "lua"],
+      "extensions": [".lua"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "lua",
+      "scopeName": "source.lua",
+      "path": "./syntaxes/lua.tmLanguage.json"
+    }]
+  }
+}
